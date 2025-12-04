@@ -3,9 +3,11 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { HomeScreen } from '../screens/HomeScreen';
 import { ProfileScreen } from '../screens/Profile/ProfileScreen';
+import { OrdersStackNavigator } from './OrdersStackNavigator';
 
 export type MainTabParamList = {
   Home: undefined;
+  Orders: undefined;
   Profile: undefined;
 };
 
@@ -18,6 +20,11 @@ export const MainTabNavigator: React.FC = () => {
         name="Home"
         component={HomeScreen}
         options={{ title: '下单' }}
+      />
+      <Tab.Screen
+        name="Orders"
+        component={OrdersStackNavigator}
+        options={{ title: '订单' }}
       />
       <Tab.Screen
         name="Profile"
